@@ -1,0 +1,428 @@
+/* public/css/mobile.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.container-header, .container-chat-open-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #075E54;
+    color: #fff;
+}
+
+.container-header-01 {
+    display: flex;
+    align-items: center;
+    font-size: 16px; 
+}
+
+.container-header-01 h1 {
+    font-size: 18px;
+}
+
+.container-header-01 i {
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 16px; /* Ajusta o tamanho do ícone */
+}
+
+
+.container-header-02 i,
+.icon-call-blocked, .icon-options-chat-blocked {
+    width: 24px;
+    height: 24px;
+    padding-top: 6px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.container-sub {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffffff;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.container-sub .tab {
+    background: none;
+    border: 1px solid gray;
+    padding: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #757575;
+    border-radius: 5px;
+}
+
+.container-sub .tab.active {
+    background-color: #E1F3E0;
+    color: #25D366;
+}
+
+.container-archive, .container-chat-footer {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    color: #075E54;
+}
+
+/* Adicionando regras para fixar o footer */
+.container-chat-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+
+.container-archive i, .icon-emoji-blocked, .icon-clip-blocked, .icon-cam-blocked, .icon-mic-blocked {
+    width: 24px;
+    height: 24px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.container-chats {
+    max-height: 75vh; /* Ajuste conforme necessário */
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #ffffff; /* Cor de fundo do container */
+}
+
+.container-chat01 {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #e5e5e5;
+    cursor: pointer;
+    position: relative;
+}
+
+.chat-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.chat-info {
+    flex: 1;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-name {
+    font-weight: bold;
+    color: #212121;
+}
+
+.chat-lastmsg-time {
+    font-size: 12px;
+    color: #757575;
+}
+
+.chat-lastmsg {
+    font-size: 14px;
+    color: #757575;
+}
+
+.chat-quant {
+    background-color: #25D366;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 8px;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Adicionando regras para fixar o footer */
+.container-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #075E54;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.container-footer div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Adicionado para posicionamento do ícone de cadeado */
+}
+
+.container-footer i {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 5px;
+}
+
+/* Estilo para o ícone de cadeado */
+.container-footer .lock-icon {
+    position: absolute;
+    top: 20px; /* Ajuste conforme necessário */
+    color: #FFC107; /* Cor do ícone de cadeado */
+    font-size: 16px; /* Tamanho do ícone de cadeado */
+    margin-left: 80%;
+    margin-top: -25%;
+}
+
+.container-footer span {
+    color: #ECE5DD;
+    font-size: 12px;
+}
+
+.container-footer div.active span {
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+
+.popup-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 300px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.unlock-button {
+    background-color: #25D366;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.unlock-button:hover {
+    background-color: #128C7E;
+}
+
+.chat-quant.green {
+    background-color: #25D366;
+}
+
+.chat-quant.gray {
+    background-color: #757575;
+}
+
+/* Modal Styles */
+.popup-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.unlock-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.unlock-button:hover {
+    background-color: #218838;
+}
+
+/* Estilos para o Botão Flutuante */
+.fab-container {
+    position: fixed;
+    bottom: 110px; /* Ajuste aqui a altura conforme necessário */
+    right: 20px;
+    display: flex;
+    flex-direction: column-reverse; /* Altera a direção para coluna invertida */
+    align-items: center;
+    z-index: 1000;
+}
+
+.fab {
+    background-color: #25d366;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.fab-options {
+    display: none;
+    flex-direction: column;
+    margin-top: 10px; /* Ajuste aqui para a margem */
+}
+
+.fab-option {
+    background-color: #fff;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.fab-option i {
+    margin-right: 10px;
+}
+
+.fab-option:hover {
+    background-color: #f0f0f0;
+}
+
+
+/* Ajuste do container de chamadas */
+.container-calls {
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.call-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.call-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.call-name {
+    font-weight: bold;
+}
+
+.call-time {
+    color: gray;
+    font-size: 12px;
+}
+
+.call-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.call-icons i {
+    color: gray;
+    font-size: 20px;
+}
